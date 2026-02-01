@@ -23,18 +23,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 4px solid #DC143C;
         }
 
         .logo-container {
             background-color: white;
-            padding: 5px 10px;
+            padding: 8px 12px;
             border-radius: 3px;
+            display: flex;
+            align-items: center;
         }
 
         .logo {
-            color: #0052A3;
-            font-weight: bold;
-            font-size: 14px;
+            height: 35px;
+            width: auto;
+            display: block;
         }
 
         .welcome {
@@ -161,7 +164,7 @@
 <body>
     <div class="header">
         <div class="logo-container">
-            <div class="logo">RTS 4.0</div>
+            <img src="assets/logo.jpeg" alt="RTS 4.0 Logo" class="logo">
         </div>
         <div class="welcome">Welcome (nama akun)</div>
     </div>
