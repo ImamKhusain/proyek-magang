@@ -7,11 +7,7 @@ session_start();
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-<<<<<<< HEAD
-define('DB_NAME', 'pos_database');
-=======
 define('DB_NAME', 'master_daerah');
->>>>>>> fitur-proses-excel-andika
 
 // Fungsi koneksi database
 function db_connect() {

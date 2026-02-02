@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RTS 4.0 - Asal Penumpang</title>
-    <style>
-=======
 <?php
 // Hapus session_start() di sini karena sudah ada di config.php (sesuai error di gambar)
 include_once '../config/config.php';
@@ -52,7 +43,6 @@ if (isset($_POST['login'])) {
     <title>RTS 4.0 - Login</title>
     <style>
         /* Style tetap sama seperti sebelumnya */
->>>>>>> fitur-proses-excel-andika
         * {
             margin: 0;
             padding: 0;
@@ -106,15 +96,6 @@ if (isset($_POST['login'])) {
             letter-spacing: 2px;
         }
 
-<<<<<<< HEAD
-        .login-header h2 {
-            color: #ffffff;
-            font-size: 28px;
-            font-weight: 300;
-        }
-
-=======
->>>>>>> fitur-proses-excel-andika
         .form-group {
             margin-bottom: 25px;
         }
@@ -143,13 +124,6 @@ if (isset($_POST['login'])) {
             box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.3);
         }
 
-<<<<<<< HEAD
-        .form-group input::placeholder {
-            color: #999;
-        }
-
-=======
->>>>>>> fitur-proses-excel-andika
         .login-button {
             width: 100%;
             padding: 15px;
@@ -172,13 +146,6 @@ if (isset($_POST['login'])) {
             box-shadow: 0 5px 20px rgba(33, 150, 243, 0.4);
         }
 
-<<<<<<< HEAD
-        .login-button:active {
-            transform: translateY(0);
-        }
-
-=======
->>>>>>> fitur-proses-excel-andika
         .register-link {
             text-align: center;
             margin-top: 25px;
@@ -198,24 +165,6 @@ if (isset($_POST['login'])) {
             text-decoration: underline;
         }
 
-<<<<<<< HEAD
-        @media (max-width: 480px) {
-            .login-container {
-                padding: 40px 30px;
-                margin: 20px;
-            }
-
-            .login-header h1 {
-                font-size: 28px;
-            }
-
-            .login-header h2 {
-                font-size: 24px;
-            }
-        }
-    </style>
-</head>
-=======
         /* Tambahan style untuk pesan error */
         .error-message {
             background: #ff5252;
@@ -229,71 +178,35 @@ if (isset($_POST['login'])) {
     </style>
 </head>
 
->>>>>>> fitur-proses-excel-andika
 <body>
     <div class="login-container">
         <div class="login-header">
             <h1>LOGIN</h1>
         </div>
-<<<<<<< HEAD
-        
-        <form id="loginForm">
-=======
 
         <?php if (isset($error)) : ?>
             <div class="error-message">Username atau Password salah!</div>
         <?php endif; ?>
 
         <form id="loginForm" action="" method="POST">
->>>>>>> fitur-proses-excel-andika
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Username" required>
             </div>
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> fitur-proses-excel-andika
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
-<<<<<<< HEAD
-            
-            <button type="submit" class="login-button">Login</button>
-        </form>
-        
-=======
 
             <button type="submit" name="login" class="login-button">Login</button>
         </form>
 
->>>>>>> fitur-proses-excel-andika
         <div class="register-link">
             Belum punya akun? <a href="register.php">Register</a>
         </div>
     </div>
 
-<<<<<<< HEAD
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            // Di sini Anda bisa menambahkan logika login
-            console.log('Username:', username);
-            console.log('Password:', password);
-            
-            // Contoh alert
-            alert('Login functionality akan diimplementasikan sesuai kebutuhan backend Anda');
-        });
-    </script>
-</body>
-=======
 </body>
 
->>>>>>> fitur-proses-excel-andika
 </html>
