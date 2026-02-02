@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,6 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RTS 4.0 - Asal Penumpang</title>
     <style>
+=======
+<?php
+// Hapus session_start() di sini karena sudah ada di config.php (sesuai error di gambar)
+include_once '../config/config.php';
+$conn = db_connect();
+
+if (isset($_POST['login'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = $_POST['password']; // Mengambil dari name="password"
+
+    // Cek username di tabel 'user'
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+
+    if (mysqli_num_rows($result) === 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        // Verifikasi password hash
+        if (password_verify($password, $row['password'])) {
+            // Set Session Login
+            // Cek apakah session sudah dimulai atau belum untuk menghindari error
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+
+            $_SESSION['login'] = true;
+            $_SESSION['user_id'] = $row['id']; // Ambil ID dari database
+            $_SESSION['user'] = $row['username'];
+
+            // Redirect ke dashboard
+            header("Location: ../dashboard.php");
+            exit;
+        }
+    }
+    $error = true;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTS 4.0 - Login</title>
+    <style>
+        /* Style tetap sama seperti sebelumnya */
+>>>>>>> fitur-proses-excel-andika
         * {
             margin: 0;
             padding: 0;
@@ -58,12 +106,15 @@
             letter-spacing: 2px;
         }
 
+<<<<<<< HEAD
         .login-header h2 {
             color: #ffffff;
             font-size: 28px;
             font-weight: 300;
         }
 
+=======
+>>>>>>> fitur-proses-excel-andika
         .form-group {
             margin-bottom: 25px;
         }
@@ -92,10 +143,13 @@
             box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.3);
         }
 
+<<<<<<< HEAD
         .form-group input::placeholder {
             color: #999;
         }
 
+=======
+>>>>>>> fitur-proses-excel-andika
         .login-button {
             width: 100%;
             padding: 15px;
@@ -118,10 +172,13 @@
             box-shadow: 0 5px 20px rgba(33, 150, 243, 0.4);
         }
 
+<<<<<<< HEAD
         .login-button:active {
             transform: translateY(0);
         }
 
+=======
+>>>>>>> fitur-proses-excel-andika
         .register-link {
             text-align: center;
             margin-top: 25px;
@@ -141,6 +198,7 @@
             text-decoration: underline;
         }
 
+<<<<<<< HEAD
         @media (max-width: 480px) {
             .login-container {
                 padding: 40px 30px;
@@ -157,31 +215,67 @@
         }
     </style>
 </head>
+=======
+        /* Tambahan style untuk pesan error */
+        .error-message {
+            background: #ff5252;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+>>>>>>> fitur-proses-excel-andika
 <body>
     <div class="login-container">
         <div class="login-header">
             <h1>LOGIN</h1>
         </div>
+<<<<<<< HEAD
         
         <form id="loginForm">
+=======
+
+        <?php if (isset($error)) : ?>
+            <div class="error-message">Username atau Password salah!</div>
+        <?php endif; ?>
+
+        <form id="loginForm" action="" method="POST">
+>>>>>>> fitur-proses-excel-andika
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Username" required>
             </div>
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> fitur-proses-excel-andika
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
+<<<<<<< HEAD
             
             <button type="submit" class="login-button">Login</button>
         </form>
         
+=======
+
+            <button type="submit" name="login" class="login-button">Login</button>
+        </form>
+
+>>>>>>> fitur-proses-excel-andika
         <div class="register-link">
             Belum punya akun? <a href="register.php">Register</a>
         </div>
     </div>
 
+<<<<<<< HEAD
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -198,4 +292,8 @@
         });
     </script>
 </body>
+=======
+</body>
+
+>>>>>>> fitur-proses-excel-andika
 </html>
