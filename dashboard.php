@@ -73,12 +73,14 @@ if (isset($_POST['generate'])) {
     }
 
     .logout-btn {
-        padding: 6px 14px;
+        padding: 6px 12px;
         background: #FFC107;
         color: #fff;
-        border-radius: 6px;
+        border-radius: 5px;
         text-decoration: none;
-        font-weight: 700;
+        font-size: 13px;
+        font-weight: 600;
+        transition: 0.3s;
     }
 
     .logout-btn:hover {
